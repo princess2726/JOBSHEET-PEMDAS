@@ -1,56 +1,305 @@
-body {
-    background-color: #f8fafc;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1e293b;
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Navbar Biru */
+.navbar {
+    background-color: #003380;
     padding: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-body.dark-theme {
-    background-color: #0f172a;
-    color: #f1f5f9;
-}
-.main-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-.web-header {
+
+.navbar-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 15px;
 }
-.toggle-theme {
-    background-color: #334155;
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
     color: #ffffff;
-    border: none;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+/* Menu Dropdown */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: #002255;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.nav-links a {
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #001133;
+}
+
+.cart-container-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 15px 5px 15px;
+}
+
+.btn-cart {
+    position: relative;
+    background-color: #444444;
+    color: #ffffff;
+    border: 1px solid #666666;
     padding: 8px 16px;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
 }
-.widget-card {
-    background-color: #ffffff;
-    padding: 24px;
-    margin-bottom: 25px;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
+
+.cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #990000;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 50%;
 }
-body.dark-theme .widget-card {
-    background-color: #1e293b;
-    border-color: #334155;
+
+.nav-links.active {
+    display: flex;
 }
-.input-group { margin-bottom: 15px; }
-.input-group label { display: block; margin-bottom: 6px; font-weight: 600; }
-.input-group input { width: 95%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
-body.dark-theme .input-group input { background-color: #334155; color: white; border-color: #475569; }
-.action-btn { background-color: #2563eb; color: white; border: none; padding: 12px 20px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; width: 100%; margin-bottom: 15px; }
-.action-btn:hover { background-color: #1d4ed8; }
-.variant-btn { background-color: #0d9488; }
-.variant-btn:hover { background-color: #0f766e; }
-.result-box { background-color: #f1f5f9; padding: 15px; border-radius: 6px; border-left: 4px solid #94a3b8; font-style: italic; min-height: 20px; }
-body.dark-theme .result-box { background-color: #334155; border-left-color: #64748b; }
+
+/* Gaya Beranda */
+.hero-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.total-belanja-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #222222;
+    border-bottom: 1px solid #222222;
+    padding: 20px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.total-harga {
+    color: #22c55e;
+}
+
+/* Katalog Produk */
+.section-title {
+    font-size: 22px;
+    padding: 20px;
+    background-color: #000000;
+}
+
+.product-container {
+    background-color: #050c1a;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #112240;
+}
+
+.image-box {
+    background-color: #f4be1b;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px 0;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.product-spec {
+    font-size: 14px;
+    color: #ccd6f6;
+    margin-bottom: 12px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 12px;
+}
+
+.btn-buy {
+    display: block;
+    width: 100%;
+    background-color: #0a3380;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* 🛠️ GAYA BARU: POP-UP KERANJANG BELANJA */
+.cart-modal {
+    display: none; /* Tersembunyi di awal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang hitam transparan */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Munculkan pop-up saat class active ditambahkan oleh JS */
+.cart-modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #0b192f;
+    border: 1px solid #1e3a8a;
+    width: 85%; /* Lebar kotak naik menjadi 85% dari ukuran layar */
+    max-width: 550px; /* Batas lebar maksimal dinaikkan agar lebih lega */
+    border-radius: 8px;
+    padding: 25px; /* Jarak ruang di dalam kotak diperlebar sedikit */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 0 auto; /* Menjaga posisi kotak tetap pas berada di tengah */
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1e3a8a;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-body {
+    max-height: 250px;
+    overflow-y: auto; /* Gulir otomatis jika item belanjaan banyak */
+    margin-bottom: 15px;
+}
+
+/* Gaya baris list item produk di keranjang */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #112240;
+}
+
+.empty-cart-text {
+    text-align: center;
+    color: #8892b0;
+    padding: 20px 0;
+}
+
+.modal-footer {
+    border-top: 1px solid #1e3a8a;
+    padding-top: 15px;
+}
+
+.modal-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-checkout {
+    display: block;
+    width: 100%;
+    background-color: #22c55e; /* Hijau WhatsApp */
+    color: #ffffff;
+    text-align: center;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 12px;
+    color: #8892b0;
+}

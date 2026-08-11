@@ -3,176 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akselerasi Landing Page - Bootstrap 5</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #e0e7ff 0%, #eef2f6 100%);
-        }
-    </style>
+    <title>TokoOnlineku - Katalog Produk</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Komponen Navbar Modern Responsif -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-info" href="#">DevPortfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#portfolio-section">Karya Portofolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#layanan-section">Layanan</a>
-                </li>
-            </ul>
+    <!-- Header Navbar -->
+    <div class="navbar">
+        <div class="navbar-top">
+            <div class="brand">TokoOnlineku</div>
+            <!-- Tombol Garis Tiga -->
+            <div class="menu-icon" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <!-- Menu yang muncul setelah garis tiga diklik -->
+        <div class="nav-links" id="navLinks">
+            <a href="#beranda" class="nav-item">Beranda</a>
+            <a href="#katalog" class="nav-item">Katalog Produk</a>
+            <div class="cart-container-menu">
+                <span>Keranjang:</span>
+                <!-- Tombol Cart ini sekarang BISA DIPENCET untuk melihat isi pesanan -->
+                <button class="btn-cart" id="openCartBtn">🛒 Cart <span class="cart-badge">0</span></button>
+            </div>
         </div>
     </div>
-</nav>
 
-    <!-- Navbar Placeholder -->
-    <div id="navbar-placeholder"></div>
-
-    <!-- Carousel Slider Component -->
-<div id="heroCarousel" class="carousel slide py-4 mb-5" data-bs-ride="carousel">
-  
-  <!-- Indikator Bagian Bawah (Opsional tapi direkomendasikan) -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-
-  <!-- Konten Gambar Slider -->
-  <div class="carousel-inner">
-    
-    <!-- Gambar 1 (Aktif Pertama) -->
-    <div class="carousel-item active">
-      <img src="https://pegastore.id/media/news/artikel-1717405526.jpg" class="d-block w-100" alt="Teknologi Informasi 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Inovasi Teknologi Masa Depan</h5>
-        <p>Eksplorasi perkembangan dunia IT dan transformasi digital global.</p>
-      </div>
-    </div>
-
-    <!-- Gambar 2 -->
-    <div class="carousel-item">
-      <img src="https://higen.net.id/assets/img/blogs/20190312/cloud-computing.png" class="d-block w-100" alt="Teknologi Informasi 2">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Pengembangan Sistem Berbasis Cloud</h5>
-        <p>Infrastruktur modern untuk mendukung efisiensi data berskala besar.</p>
-      </div>
-    </div>
-
-    <!-- Gambar 3 -->
-    <div class="carousel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtQr68GzT1yXaRq1xB3J6AI4gzjq7d0-2qLyB7Puz4eA&s=10" class="d-block w-100" alt="Teknologi Informasi 3">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Keamanan Siber & Jaringan</h5>
-        <p>Perlindungan data terintegrasi menghadapi tantangan era digital.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Tombol Navigasi Panah Kiri dan Kanan -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-
-</div>
-
-    <!-- Grid Cards Portfolio Placeholder -->
-    <!-- Bagian Karya Portofolio Berbasis Grid Sistem -->
-<section id="portfolio-section" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Karya Unggulan Portofolio</h2>
-            <p class="text-muted">Daftar project aplikasi web komersial yang telah berhasil dirilis ke publik</p>
+    <!-- Tampilan Beranda -->
+    <div class="hero-section" id="beranda">
+        <h1 class="hero-title">TokoOnlineku</h1>
+        <p class="hero-desc">Dapatkan gadget & elektronik impian Anda dengan harga terbaik!</p>
+        
+        <div class="total-belanja-box">
+            <span>Total Belanja Saat Ini:</span>
+            <span class="total-harga" id="totalHarga">Rp 0</span>
         </div>
-        <div class="row g-4">
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Project Satu">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">E-Commerce Web Application</h5>
-                        <p class="card-text text-secondary text-sm">Sistem penjualan retail multi-toko terintegrasi gerbang pembayaran otomatis online modern.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pb-3">
-                        <button class="btn btn-outline-primary btn-sm w-100">Lihat Dokumentasi</button>
-                    </div>
+    </div>
+
+    <!-- Area Katalog Produk -->
+    <div class="main-content" id="katalog">
+        <h2 class="section-title">Katalog Produk Kami</h2>
+
+        <!-- PRODUK 1 -->
+        <div class="product-container">
+            <div class="product-card">
+                <div class="image-box">
+                    <img src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13721001/Screen_Shot_2019_01_28_at_8.01.30_PM.png?quality=90&strip=all&crop=3.7735849056604,0,92.452830188679,100" alt="Laptop Ultrabook Pro">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Laptop Ultrabook Pro</div>
+                    <div class="product-spec">Intel Core i7 13th Gen, RAM 16GB, SSD 512GB.</div>
+                    <div class="product-price" data-price="13000000">Rp 13.000.000</div>
+                    <a href="#" class="btn-buy">Beli Sekarang</a>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Project Dua">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">SaaS Dashboard Analytics</h5>
-                        <p class="card-text text-secondary text-sm">Dasbor pengolah data bisnis perusahaan real-time lengkap dengan visualisasi grafik interaktif.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pb-3">
-                        <button class="btn btn-outline-primary btn-sm w-100">Lihat Dokumentasi</button>
-                    </div>
+        </div>
+
+        <!-- PRODUK 2 -->
+        <div class="product-container">
+            <div class="product-card">
+                <div class="image-box">
+                    <img src="https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/a64a08deecc24e57bb5002b97ef45587~tplv-o3syd03w52-resize-jpeg:700:0.jpeg" alt="Headphone Wireless ANC">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Headphone Wireless ANC</div>
+                    <div class="product-spec">Active Noise Cancelling, Baterai 30 Jam.</div>
+                    <div class="product-price" data-price="1500000">Rp 1.500.000</div>
+                    <a href="#" class="btn-buy">Beli Sekarang</a>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Project Tiga">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Company Profile Web AI</h5>
-                        <p class="card-text text-secondary text-sm">Landing page agensi digital modern yang dioptimasi penuh menggunakan teknologi kecerdasan buatan.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pb-3">
-                        <button class="btn btn-outline-primary btn-sm w-100">Lihat Dokumentasi</button>
-                    </div>
+        </div>
+
+        <!-- PRODUK 3 -->
+        <div class="product-container">
+            <div class="product-card">
+                <div class="image-box">
+                    <img src="https://i.pinimg.com/originals/64/54/e8/6454e823c55de2037c70f8737e4babab.jpg" alt="Backpack Waterproof Urban">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Backpack Waterproof Urban</div>
+                    <div class="product-spec"><B>Cordura Anti Air, Slot Laptop 15 Inci, Kapasitas Luas 25 Liter.</B></div>
+                    <div class="product-price" data-price="150000">Rp 150.000</div>
+                    <a href="#" class="btn-buy">Beli Sekarang</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
-    <!-- Modal Dialog Placeholder -->
-    <!-- Komponen Interaktif Bootstrap Modals Dialog -->
-<div class="modal fade" id="modalKontak" tabindex="-1" aria-labelledby="modalKontakLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <!-- 🛒 POP-UP HALAMAN KERANJANG BELANJA (MODAL OVERLAY) -->
+    <div class="cart-modal" id="cartModal">
         <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title fw-bold" id="modalKontakLabel">Formulir Pesan Konsultasi</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+                <h2>Isi Keranjang Belanja</h2>
+                <!-- Tombol Silang untuk Menutup Keranjang -->
+                <button class="close-modal-btn" id="closeCartBtn">&times;</button>
             </div>
-            <div class="modal-body p-4">
-                <form>
-                    <div class="mb-3">
-                        <label for="form-email" class="form-label fw-semibold">Alamat Email Aktif</label>
-                        <input type="email" class="form-control" id="form-email" placeholder="nama@sekolah.sch.id" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="form-pesan" class="form-label fw-semibold">Isi Keperluan Pesan</label>
-                        <textarea class="form-control" id="form-pesan" rows="4" placeholder="Tulis rincian kebutuhan web application Anda..." required></textarea>
-                    </div>
-                    <div class="d-grid mt-4">
-                        <button type="submit" class="btn btn-primary fw-bold">Kirim Pesan Sekarang</button>
-                    </div>
-                </form>
+            
+            <!-- Tempat daftar barang pesanan muncul otomatis -->
+            <div class="modal-body" id="cartItemsList">
+                <p class="empty-cart-text">Keranjang kamu masih kosong nih...</p>
+            </div>
+            
+        
+
+<div class="modal-footer" style="margin-top: 15px;">
+    
+    <!-- ... kode di atasnya ... -->
+            
+            <div class="modal-footer" style="margin-top: 15px;">
+                
+                <!-- Kotak Putih Panjang Tempat Menampung Total Nominal -->
+                <div class="total-box-white" style="background-color: #ffffff; color: #000000; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; font-weight: bold; font-size: 18px; margin-bottom: 15px;">
+                    <span>Total:</span>
+                    <span id="modalTotalHarga">Rp 0</span>
+                </div>
+                
+                <!-- COPAS KODE BARU KAMU DI SINI UNTUK MENGGANTI TOMBOL LAMA -->
+                <button class="btn-checkout" id="checkoutBtn" disabled style="display: block; width: 100%; background-color: #22c55e; color: #ffffff; border: none; padding: 12px 0; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: default; opacity: 1;">Pesan sekarang</button>
             </div>
         </div>
     </div>
-</div>
 
-    <!-- Bootstrap JS Bundle dengan Popper.js via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 TokoOnlineku. All rights reserved.
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html>>
+
+    
